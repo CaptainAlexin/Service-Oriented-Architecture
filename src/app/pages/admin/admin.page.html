@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Modo Admin</ion-title>
+    <ion-button slot="end" color="warning" (click)="authService.logout()">CERRAR SESIÓN<ion-icon name="close-circle-sharp"></ion-icon></ion-button>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let recuerdo of recuerdosService.recuerdos">
+    <ion-card >
+      <ion-item>
+        <h1>{{recuerdo.tituloRecu}}</h1>
+      </ion-item>
+
+      <ion-item>
+        <h2>{{recuerdo.descRecu}}</h2>
+      </ion-item>
+
+      <ion-item>
+        <img [src]="recuerdo.imgRecu" alt="">
+      </ion-item>
+      <br>
+
+      <div class="editar">
+        <button (click)="deleteRecuerdo(recuerdo._id)" class="trash"><ion-icon name="trash-sharp"></ion-icon></button>
+      </div>
+    </ion-card>
+  </div>
+</ion-content>
