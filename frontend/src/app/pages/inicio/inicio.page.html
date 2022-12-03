@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>INICIO</ion-title>
+    <ion-button slot="end" color="warning" (click)="authService.logout()">CERRAR SESIÓN<ion-icon name="close-circle-sharp"></ion-icon></ion-button>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main">
+    <ion-card routerLink="/notas">
+      <img src="../../../assets/imgs/nota_1.png" />
+      <ion-card-header>
+        <ion-card-title >VER NOTAS </ion-card-title>
+      </ion-card-header>
+    </ion-card>
+
+    <ion-card routerLink="/recuerdos">
+      <img src="../../../assets/imgs/recuerdo_1.png" />
+      <ion-card-header>
+        <ion-card-title >VER RECUERDOS</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </div>
+
+  <div class="main2">
+    <ion-card routerLink="/map">
+      <img src="../../../assets/imgs/loc_1.png" />
+      <ion-card-header>
+        <ion-card-title>BUSCAR LUGAR</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </div>
+
+  <div class="redes">
+    <img src="../../assets/imgs/redes.png">
+  </div>
+
+</ion-content>
+
+
