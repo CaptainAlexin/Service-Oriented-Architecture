@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 //mongodb://localhost:27017
 
-mongoose.connect('mongodb://localhost/projectDMM',{
+mongoose.connect('mongodb://localhost:27017/projectDMM',{
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
