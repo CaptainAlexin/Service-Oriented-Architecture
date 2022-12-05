@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Recuerdos</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/inicio"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1>Agregar Recuerdo</h1>
+  <div class="linea-main">
+    <div class="linea"></div>
+  </div>
+
+  <div class="imgV-main">
+    <img src="../../../assets/imgs/recuerdo_v_1.png">
+  </div>
+  <ion-card>
+    <form #recuerdoForm="ngForm">
+      <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="recuerdosService.selectedRecuerdo._id">
+
+      <ion-item>
+        <ion-label position="stacked">Titulo</ion-label>
+        <ion-input name="tituloRecu" #tituloRecu="ngModel" [(ngModel)]="recuerdosService.selectedRecuerdo.tituloRecu" type="text" placeholder="Ingresa un titulo para tu recuerdo" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Descripción</ion-label>
+        <ion-input name="descRecu" #descRecu="ngModel" [(ngModel)]="recuerdosService.selectedRecuerdo.descRecu" type="text" placeholder="Ingresa una descripción para tu recuerdo" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Imagen</ion-label>
+        <ion-input name="imgRecu" #imgRecu="ngModel" [(ngModel)]="recuerdosService.selectedRecuerdo.imgRecu" type="text" placeholder="Ingresa una imagen para tu recuerdo" required=""></ion-input>
+      </ion-item>
+
+      <div class="card-2">
+        <ion-button color="success" (click)="agregarRecuerdo(recuerdoForm)">Aceptar</ion-button>
+        <ion-button color="danger" (click)="resetForm(recuerdoForm)">Borrar</ion-button>
+      </div>
+    </form>
+  </ion-card>
+
+  <div *ngFor="let recuerdo of recuerdosService.recuerdos">
+    <ion-card >
+      <ion-item>
+        <h1>{{recuerdo.tituloRecu}}</h1>
+      </ion-item>
+
+      <ion-item>
+        <h2>{{recuerdo.descRecu}}</h2>
+      </ion-item>
+
+      <ion-item>
+        <img [src]="recuerdo.imgRecu" alt="">
+      </ion-item>
+
+      <div class="editar">
+        <button (click)="editRecuerdo(recuerdo)" class="edit"><ion-icon name="create-sharp"></ion-icon></button>
+        <button (click)="deleteRecuerdo(recuerdo._id)" class="trash"><ion-icon name="trash-sharp"></ion-icon></button>
+      </div>
+    </ion-card>
+  </div>
+</ion-content>
