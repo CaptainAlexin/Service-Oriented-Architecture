@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Notas</ion-title>
+    <ion-title>Notas 🖊</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/inicio"></ion-back-button>
     </ion-buttons>
@@ -21,23 +21,23 @@
     <form #notaForm="ngForm">
       <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="notasService.selectedNota._id">
       <ion-item>
-        <ion-label position="stacked">Titulo</ion-label>
+        <ion-label position="stacked">Titulo:</ion-label>
         <ion-input name="titulo" #titulo="ngModel" [(ngModel)]="notasService.selectedNota.titulo" type="text" placeholder="Ingresa un titulo para tu nota" required></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label position="stacked">Descripción</ion-label>
+        <ion-label position="stacked">Descripción:</ion-label>
         <ion-input name="desc" #desc="ngModel" [(ngModel)]="notasService.selectedNota.desc" type="text" placeholder="Ingresa una descripción para tu nota" required></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label position="stacked">Fecha</ion-label>
+        <ion-label position="stacked">Fecha:</ion-label>
         <ion-input name="fecha" #fecha="ngModel" [(ngModel)]="notasService.selectedNota.fecha" type="date" placeholder="Ingresa una fecha para tu nota" required=""></ion-input>
       </ion-item>
 
       <div class="card-2">
-        <ion-button color="success" (click)="agregarNota(notaForm)">Aceptar</ion-button>
-        <ion-button color="danger" (click)="resetForm(notaForm)">Borrar</ion-button>
+        <ion-button color="success" (click)="agregarNota(notaForm)">Aceptar ✅</ion-button>
+        <ion-button color="danger" (click)="resetForm(notaForm)">Borrar ❌</ion-button>
       </div>
     </form>
   </ion-card>
